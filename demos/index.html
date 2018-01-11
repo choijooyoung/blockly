@@ -2,6 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script src="blockly_compressed.js"></script>
+  <script src="javascript_compressed.js"></script>
+  <script>
+  function myUpdateFunction(event) {
+  var code = Blockly.JavaScript.workspaceToCode(workspace);
+  document.getElementById('textarea').value = code;
+}
+workspace.addChangeListener(myUpdateFunction);
+  </script>
   <title>Blockly Demos</title>
   <style>
     body {
@@ -209,5 +218,6 @@
       </td>
     </tr>
   </table>
+  <textarea id="textarea"></textarea>
 </body>
 </html>
